@@ -23,7 +23,6 @@ public class Database {
         data = new ArrayList<>();
         getinfo(am,path);
     }
-
     //reads all the data from excel
     public static void getinfo(AssetManager am,String path){
         String line ="";

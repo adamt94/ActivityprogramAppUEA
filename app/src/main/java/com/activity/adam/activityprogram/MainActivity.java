@@ -9,14 +9,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView UEALogo;
-    ImageView iv;
-    RelativeLayout layout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,23 +26,16 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        RelativeLayout.LayoutParams vp =
-                new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.FILL_PARENT,
-                        RelativeLayout.LayoutParams.FILL_PARENT);
-        layout = new RelativeLayout(this);
-        iv = new ImageView(this);
-        layout.addView(iv);
-        layout.setBackgroundColor(Color.parseColor("#303F9F"));
 
-        vp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,RelativeLayout.LayoutParams.MATCH_PARENT);
-        iv.setLayoutParams(vp);
-        vp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT,RelativeLayout.LayoutParams.WRAP_CONTENT);
-        vp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-        vp.addRule(RelativeLayout.CENTER_HORIZONTAL);
-        vp.bottomMargin= 200;
-        int resID = getResources().getIdentifier("uealogoalt", "drawable",  getPackageName());
-        // tv.setLayoutParams(vp);
-        iv.setImageResource(resID);
+
+        ArrayList<String> schools=new ArrayList<String>();
+        schools.add("CMP");
+        schools.add("PHA");
+        schools.add("BIO");
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,schools);
+        Spinner spin = (Spinner) findViewById(R.id.schoolSpinner);
+        spin.setAdapter(adapter);
     }
 
     @Override

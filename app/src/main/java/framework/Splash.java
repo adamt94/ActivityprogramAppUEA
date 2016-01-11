@@ -11,8 +11,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.activity.adam.locationfinder.MainActivity;
-import com.activity.adam.locationfinder.R;
+import com.activity.adam.activityprogram.MainActivity;
+import com.activity.adam.activityprogram.R;
 
 import java.lang.Override;import java.lang.Runnable;
 
