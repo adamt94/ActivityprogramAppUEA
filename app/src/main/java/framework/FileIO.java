@@ -1,4 +1,4 @@
-package se2.saaf.framework;
+package framework;
 
 import java.io.IOException;
 import java.io.InputStream;

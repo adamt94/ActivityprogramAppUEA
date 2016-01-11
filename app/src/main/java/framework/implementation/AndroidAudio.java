@@ -1,4 +1,4 @@
-package se2.saaf.framework.implementation;
+package framework.implementation;
 
 import java.io.IOException;
 
@@ -8,9 +8,9 @@ import android.content.res.AssetManager;
 import android.media.AudioManager;
 import android.media.SoundPool;
 
-import se2.saaf.framework.Audio;
-import se2.saaf.framework.Music;
-import se2.saaf.framework.Sound;
+import framework.Audio;
+import framework.Music;
+import framework.Sound;
 
 public class AndroidAudio implements Audio {
     AssetManager assets;

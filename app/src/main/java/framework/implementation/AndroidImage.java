@@ -1,9 +1,9 @@
-package se2.saaf.framework.implementation;
+package framework.implementation;
 
 import android.graphics.Bitmap;
 
-import se2.saaf.framework.Image;
-import se2.saaf.framework.Graphics.ImageFormat;
+import framework.Image;
+import framework.Graphics.ImageFormat;
 
 public class AndroidImage implements Image {
     Bitmap bitmap;

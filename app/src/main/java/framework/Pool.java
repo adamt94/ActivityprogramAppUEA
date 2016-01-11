@@ -1,4 +1,4 @@
-package se2.saaf.framework;
+package framework;
 
 import java.util.ArrayList;
 import java.util.List;

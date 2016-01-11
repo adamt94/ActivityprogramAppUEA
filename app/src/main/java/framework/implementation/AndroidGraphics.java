@@ -1,4 +1,4 @@
-package se2.saaf.framework.implementation;
+package framework.implementation;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,8 +13,8 @@ import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.graphics.Rect;
 
-import se2.saaf.framework.Graphics;
-import se2.saaf.framework.Image;
+import framework.Graphics;
+import framework.Image;
 
 public class AndroidGraphics implements Graphics {
     AssetManager assets;

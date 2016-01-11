@@ -1,10 +1,10 @@
-package se2.saaf.framework.implementation;
+package framework.implementation;
 
 import java.util.List;
 
 import android.view.View.OnTouchListener;
 
-import se2.saaf.framework.Input.TouchEvent;
+import framework.Input.TouchEvent;
 
 public interface TouchHandler extends OnTouchListener {
     public boolean isTouchDown(int pointer);

@@ -1,4 +1,4 @@
-package se2.saaf.framework;
+package framework;
 
 public interface Sound {
     public void play(float volume);

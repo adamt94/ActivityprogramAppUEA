@@ -1,4 +1,4 @@
-package se2.saaf.framework.implementation;
+package framework.implementation;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -13,7 +13,7 @@ import android.content.res.AssetManager;
 import android.os.Environment;
 import android.preference.PreferenceManager;
 
-import se2.saaf.framework.FileIO;
+import framework.FileIO;
 
 public class AndroidFileIO implements FileIO {
     Context context;

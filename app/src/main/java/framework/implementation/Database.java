@@ -1,4 +1,4 @@
-package se2.saaf.framework.implementation;
+package framework.implementation;
 
 import android.content.res.AssetManager;
 

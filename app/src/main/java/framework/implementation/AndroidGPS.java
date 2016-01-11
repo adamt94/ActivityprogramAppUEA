@@ -1,4 +1,4 @@
-package se2.saaf.framework.implementation;
+package framework.implementation;
 
 import android.Manifest;
 import android.app.Activity;
@@ -10,7 +10,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.widget.Toast;
-import se2.saaf.framework.GPS;
+import framework.GPS;
 /**
  * Created by BEN on 17/12/2015.
  */

@@ -1,4 +1,4 @@
-package se2.saaf.framework;
+package framework;
 
 /**
  * Created by Callum on 06/11/2015.

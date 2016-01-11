@@ -1,4 +1,4 @@
-package se2.saaf.framework;
+package framework;
 
 public interface Audio {
     public Music createMusic(String file);

@@ -1,4 +1,4 @@
-package se2.saaf.framework.implementation;
+package framework.implementation;
 
 import java.io.IOException;
 
@@ -9,7 +9,7 @@ import android.media.MediaPlayer.OnPreparedListener;
 import android.media.MediaPlayer.OnSeekCompleteListener;
 import android.media.MediaPlayer.OnVideoSizeChangedListener;
 
-import se2.saaf.framework.Music;
+import framework.Music;
 
 public class AndroidMusic implements Music, OnCompletionListener, OnSeekCompleteListener, OnPreparedListener, OnVideoSizeChangedListener {
     MediaPlayer mediaPlayer;

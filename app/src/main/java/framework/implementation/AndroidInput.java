@@ -1,4 +1,4 @@
-package se2.saaf.framework.implementation;
+package framework.implementation;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import android.content.Context;
 import android.os.Build.VERSION;
 import android.view.View;
 
-import se2.saaf.framework.Input;
+import framework.Input;
 
 public class AndroidInput implements Input {    
     TouchHandler touchHandler;

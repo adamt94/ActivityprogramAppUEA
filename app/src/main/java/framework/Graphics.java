@@ -1,4 +1,4 @@
-package se2.saaf.framework;
+package framework;
 
 import android.graphics.Paint;
 
@@ -16,7 +16,7 @@ public interface Graphics {
     public void drawRect(int x, int y, int width, int height, int color);
 
     public void drawImage(Image image, int x, int y, int srcX, int srcY,
-            int srcWidth, int srcHeight);
+                          int srcWidth, int srcHeight);
 
     public void drawImage(Image Image, int x, int y);
 

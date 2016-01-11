@@ -1,16 +1,31 @@
-package se2.saaf.framework.implementation;
+package framework.implementation;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.os.PowerManager;
 
-import se2.saaf.framework.App;
-import se2.saaf.framework.Audio;
-import se2.saaf.framework.FileIO;
-import se2.saaf.framework.GPS;
-import se2.saaf.framework.Graphics;
-import se2.saaf.framework.Input;
-import se2.saaf.framework.Notification;
+import framework.App;
+import framework.Audio;
+import framework.FileIO;
+import framework.GPS;
+import framework.Graphics;
+import framework.Input;
+import framework.Notification;
+
+/**
+ * Created by BEN on 17/12/2015.
+ */
+import android.app.Activity;
+import android.graphics.Bitmap;
+import android.os.PowerManager;
+
+import framework.App;
+import framework.Audio;
+import framework.FileIO;
+import framework.GPS;
+import framework.Graphics;
+import framework.Input;
+import framework.Notification;
 
 /**
  * Created by BEN on 17/12/2015.
@@ -30,7 +45,7 @@ public class AndroidApp implements App{
         this.activity = activity;
         graphics = new AndroidGraphics(activity.getAssets(), Bitmap.createBitmap(480,800, Bitmap.Config.RGB_565));
         audio = new AndroidAudio(activity);
-        input = new AndroidInput(activity,activity.getCurrentFocus(),480/ activity.getWindowManager().getDefaultDisplay().getWidth(),800/ activity.getWindowManager().getDefaultDisplay().getWidth());
+//        input = new AndroidInput(activity,activity.getCurrentFocus(),480/ activity.getWindowManager().getDefaultDisplay().getWidth(),800/ activity.getWindowManager().getDefaultDisplay().getWidth());
         fileIO = new AndroidFileIO(activity);
         notification = new AndroidNotification(activity);
         gps = new AndroidGPS(activity);

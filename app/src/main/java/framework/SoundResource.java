@@ -1,10 +1,10 @@
-package se2.saaf.framework;
+package framework;
 
 /**
  * Created by Callum on 30/10/2015.
  */
 
-import se2.saaf.framework.implementation.AndroidAudio;
+import framework.implementation.AndroidAudio;
 import android.app.Activity;
 public class SoundResource {
 

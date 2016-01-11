@@ -1,6 +1,6 @@
-package se2.saaf.framework;
+package framework;
 
-import se2.saaf.framework.Graphics.ImageFormat;
+import framework.Graphics.ImageFormat;
 
 public interface Image {
     public int getWidth();

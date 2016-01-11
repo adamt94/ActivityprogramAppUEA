@@ -1,8 +1,8 @@
-package se2.saaf.framework.implementation;
+package framework.implementation;
 
 import android.media.SoundPool;
 
-import se2.saaf.framework.Sound;
+import framework.Sound;
 
 public class AndroidSound implements Sound {
     int soundId;

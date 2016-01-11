@@ -1,6 +1,6 @@
-package se2.saaf.framework;
+package framework;
 
-import se2.saaf.framework.implementation.Database;
+import framework.implementation.Database;
 
 /**
  * Created by BEN on 17/12/2015.

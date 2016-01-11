@@ -1,5 +1,6 @@
 package com.activity.adam.activityprogram;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,9 +9,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 public class MainActivity extends AppCompatActivity {
 
+    ImageView UEALogo;
+    ImageView iv;
+    RelativeLayout layout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,14 +24,23 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        RelativeLayout.LayoutParams vp =
+                new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.FILL_PARENT,
+                        RelativeLayout.LayoutParams.FILL_PARENT);
+        layout = new RelativeLayout(this);
+        iv = new ImageView(this);
+        layout.addView(iv);
+        layout.setBackgroundColor(Color.parseColor("#303F9F"));
+
+        vp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,RelativeLayout.LayoutParams.MATCH_PARENT);
+        iv.setLayoutParams(vp);
+        vp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT,RelativeLayout.LayoutParams.WRAP_CONTENT);
+        vp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+        vp.addRule(RelativeLayout.CENTER_HORIZONTAL);
+        vp.bottomMargin= 200;
+        int resID = getResources().getIdentifier("uealogoalt", "drawable",  getPackageName());
+        // tv.setLayoutParams(vp);
+        iv.setImageResource(resID);
     }
 
     @Override

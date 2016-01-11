@@ -1,4 +1,4 @@
-package se2.saaf.framework.implementation;
+package framework.implementation;
 
 /**
  * Created by adam on 29-Dec-15.

@@ -1,4 +1,4 @@
-package se2.saaf.framework;
+package framework;
 
 import android.location.Location;
 
@@ -11,16 +11,16 @@ public class AndroidLocation{
     private String description;
     private Location location;
 
-    public AndroidLocation(android.location.Location location) {
+    public AndroidLocation(Location location) {
         this.location = location;
     }
 
-    public AndroidLocation(android.location.Location location, String title) {
+    public AndroidLocation(Location location, String title) {
         this.location = location;
         this.title = title;
     }
 
-    public AndroidLocation(android.location.Location location, String title, String description) {
+    public AndroidLocation(Location location, String title, String description) {
         this.location = location;
         this.title = title;
         this.description = description;
