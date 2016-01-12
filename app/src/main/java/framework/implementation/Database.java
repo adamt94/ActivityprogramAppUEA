@@ -15,17 +15,24 @@ import java.util.logging.Logger;
  */
 public class Database {
     //contains all the data of uea locations,buildings etc
-    private static ArrayList<MapData> data;
+    private static ArrayList<MapData> mapData;
+    private static ArrayList<ActivityData> activityData;
 
     static BufferedReader reader;
 
-    public Database(AssetManager am,String path){
-        data = new ArrayList<>();
-        getinfo(am,path);
+    public Database(AssetManager am, String path, String app) {
+        if (app == "activity") {
+            activityData = new ArrayList<>();
+            readInfo(am, path, app);
+        } else if (app == "map") {
+            mapData = new ArrayList<>();
+            readInfo(am, path, app);
+        }
     }
+
     //reads all the data from excel
-    public static void getinfo(AssetManager am,String path){
-        String line ="";
+    public static void readInfo(AssetManager am, String path, String app) {
+        String line = "";
 
         try {
             //create file reader
@@ -34,7 +41,6 @@ public class Database {
             BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
             //Read the CSV file header to skip it
             reader.readLine();
-
 
 
             //Read the file line by line starting from the second line
@@ -46,9 +52,14 @@ public class Database {
 
                 if (tokens.length > 0) {
                     //creates the mapdata object
+                    if (app == "map"){
                     MapData md = new MapData(tokens[0], tokens[1], Double.parseDouble(tokens[3]), Double.parseDouble(tokens[2]), tokens[4], tokens[5], tokens[6], tokens[7], tokens[8], tokens[9]);
 
-                    data.add(md);
+                    mapData.add(md);}
+                    else if (app == "activity"){
+                        ActivityData ad = new ActivityData(tokens[0], Integer.parseInt(tokens[1]), Integer.parseInt(tokens[2]), Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]), tokens[5], tokens[6], tokens[7]);
+                    activityData.add(ad);
+                    }
                 }
             }
 
@@ -57,17 +68,23 @@ public class Database {
         }
 
 
-
     }
 
 
-
-    public ArrayList<MapData> getData() {
-        return data;
+    public ArrayList<MapData> getMapData() {
+        return mapData;
     }
 
-    public void setData(ArrayList<MapData> data) {
-        this.data = data;
+    public void setMapData(ArrayList<MapData> data) {
+        this.mapData = data;
+    }
+
+    public ArrayList<ActivityData> getActivityData() {
+        return activityData;
+    }
+
+    public void setActivityData(ArrayList<ActivityData> data) {
+        this.activityData = data;
     }
 
 }

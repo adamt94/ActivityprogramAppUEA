@@ -1,0 +1,61 @@
+school	day	month	year	hour	description	location	room
+cmp	17	5	2016	10	CMP Welcome talks	School of Computing Sciences	Sci 0.31		
+cmp	17	5	2016	11	CMP Year In Industy talks	Lecture Theatres 1-4	Lec 1		
+cmp	17	5	2016	13	CMP Guided Tour	School of Computing Sciences	Sci 0.31		
+cmp	17	5	2016	14	CMP Graduate Career Prospects	Teaching Wall: Arts I	3.01		
+cmp	17	5	2016	15	CMP Practical Demonstration	School of Computing Sciences	Sci 0.31		
+bio	17	5	2016	9	BIO Welcome talks	School of Biological Sciences	Bio 2.10		
+bio	17	5	2016	10	BIO Year In Industry Talks	Lecture Theatres 1-4	Lec 1		
+bio	17	5	2016	13	BIO Guided Tour	School of Biological Sciences	Bio 01.12		
+bio	17	5	2016	14	BIO Graduate Career Prospects	Teaching Wall: Arts I	2.03		
+pha	17	5	2016	9	PHA Welcome Talks	Lecture Theatres 1-4	Lec 2		
+pha	17	5	2016	11	PHA Guided Tour	School of Pharmacy	Main Entrance		
+pha	17	5	2016	12	PHA Graduate Career Prospects	Lecture Theatres 1-4	Lec 1		
+pha	17	5	2016	13	PHA Year In Industry Talks	Lecture Theatres 1-4	Lec 2		
+his	17	5	2016	9	HIS Welcome Talks	Teaching Wall: Arts I	3.02		
+his	17	5	2016	12	HIS Guided Tour	Teaching Wall: Arts I	3.02		
+his	17	5	2016	14	HIS Graduate Career Propects	Teaching Wall: Arts I	0.13		
+nbs	17	5	2016	11	NBS Welcome Talks	Norwich Business School	Lecture Hall		
+nbs	17	5	2016	15	NBS Graduate Career Prospects	Norwich Business School	Lecture Hall		
+med	17	5	2016	10	MED Welcome Talks	Lecture Theatres 1-4	Lec 2		
+med	17	5	2016	12	MED Guided Tour	Norwich Medical School	Main Entrance		
+cmp	23	7	2016	10	CMP Welcome talks	School of Computing Sciences	Sci 0.31		
+cmp	23	7	2016	11	CMP Year In Industy talks	Lecture Theatres 1-4	Lec 1		
+cmp	23	7	2016	13	CMP Guided Tour	School of Computing Sciences	Sci 0.31		
+cmp	23	7	2016	14	CMP Graduate Career Prospects	Teaching Wall: Arts I	3.01		
+cmp	23	7	2016	15	CMP Practical Demonstration	School of Computing Sciences	Sci 0.31		
+bio	23	7	2016	9	BIO Welcome talks	School of Biological Sciences	Bio 2.10		
+bio	23	7	2016	10	BIO Year In Industry Talks	Lecture Theatres 1-4	Lec 1		
+bio	23	7	2016	13	BIO Guided Tour	School of Biological Sciences	Bio 01.12		
+bio	23	7	2016	14	BIO Graduate Career Prospects	Teaching Wall: Arts I	2.03		
+pha	23	7	2016	9	PHA Welcome Talks	Lecture Theatres 1-4	Lec 2		
+pha	23	7	2016	11	PHA Guided Tour	School of Pharmacy	Main Entrance		
+pha	23	7	2016	12	PHA Graduate Career Prospects	Lecture Theatres 1-4	Lec 1		
+pha	23	7	2016	13	PHA Year In Industry Talks	Lecture Theatres 1-4	Lec 2		
+his	23	7	2016	9	HIS Welcome Talks	Teaching Wall: Arts I	3.02		
+his	23	7	2016	12	HIS Guided Tour	Teaching Wall: Arts I	3.02		
+his	23	7	2016	14	HIS Graduate Career Propects	Teaching Wall: Arts I	0.13		
+nbs	23	7	2016	11	NBS Welcome Talks	Norwich Business School	Lecture Hall		
+nbs	23	7	2016	15	NBS Graduate Career Prospects	Norwich Business School	Lecture Hall		
+med	23	7	2016	10	MED Welcome Talks	Lecture Theatres 1-4	Lec 2		
+med	23	7	2016	12	MED Guided Tour	Norwich Medical School	Main Entrance		
+cmp	6	10	2016	10	CMP Welcome talks	School of Computing Sciences	Sci 0.31		
+cmp	6	10	2016	11	CMP Year In Industy talks	Lecture Theatres 1-4	Lec 1		
+cmp	6	10	2016	13	CMP Guided Tour	School of Computing Sciences	Sci 0.31		
+cmp	6	10	2016	14	CMP Graduate Career Prospects	Teaching Wall: Arts I	3.01		
+cmp	6	10	2016	15	CMP Practical Demonstration	School of Computing Sciences	Sci 0.31		
+bio	6	10	2016	9	BIO Welcome talks	School of Biological Sciences	Bio 2.10		
+bio	6	10	2016	10	BIO Year In Industry Talks	Lecture Theatres 1-4	Lec 1		
+bio	6	10	2016	13	BIO Guided Tour	School of Biological Sciences	Bio 01.12		
+bio	6	10	2016	14	BIO Graduate Career Prospects	Teaching Wall: Arts I	2.03		
+pha	6	10	2016	9	PHA Welcome Talks	Lecture Theatres 1-4	Lec 2		
+pha	6	10	2016	11	PHA Guided Tour	School of Pharmacy	Main Entrance		
+pha	6	10	2016	12	PHA Graduate Career Prospects	Lecture Theatres 1-4	Lec 1		
+pha	6	10	2016	13	PHA Year In Industry Talks	Lecture Theatres 1-4	Lec 2		
+his	6	10	2016	9	HIS Welcome Talks	Teaching Wall: Arts I	3.02		
+his	6	10	2016	12	HIS Guided Tour	Teaching Wall: Arts I	3.02		
+his	6	10	2016	14	HIS Graduate Career Propects	Teaching Wall: Arts I	0.13		
+nbs	6	10	2016	11	NBS Welcome Talks	Norwich Business School	Lecture Hall		
+nbs	6	10	2016	15	NBS Graduate Career Prospects	Norwich Business School	Lecture Hall		
+med	6	10	2016	10	MED Welcome Talks	Lecture Theatres 1-4	Lec 2		
+med	6	10	2016	12	MED Guided Tour	Norwich Medical School	Main Entrance		
