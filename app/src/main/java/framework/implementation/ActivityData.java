@@ -28,6 +28,10 @@ public class ActivityData {
     public String getSchool() {
         return school;
     }
+    public String getDate() {
+        return day + "/" + month + "/" + year;
+    }
+
 
     public void setSchool(String school) {
         this.school = school;

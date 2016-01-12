@@ -1,40 +1,32 @@
 package com.activity.adam.activityprogram;
 
-import android.content.Context;
-import android.graphics.Color;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
+import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 import framework.implementation.ActivityData;
 import framework.implementation.Database;
 
 public class MainActivity extends AppCompatActivity {
 
-    Database db;
+    static Database db;
     ArrayList<ActivityData> ad;
     ArrayList<String> schools = new ArrayList<>();
-    ArrayList<Integer> dates = new ArrayList<>();
+    ArrayList<String> dates = new ArrayList<>();
 
     Spinner s1, s2;
-    Context context = this;
+    Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,49 +34,51 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        db = new Database(getAssets(), "activityprogramlist.tsv", "activity");
+        db = new Database(getAssets(), "uea-map-data.tsv", "activityprogramlist.tsv");
         ad = db.getActivityData();
+
         for (int i = 0; i < ad.size(); i++) {
+            Integer day = (ad.get(i).getDay());
+            Integer month = (ad.get(i).getMonth());
+            Integer year = (ad.get(i).getYear());
+            String date = ("" + day.toString() + "/" + month.toString() + "/" + year.toString());
+            dates.add(date);
             schools.add(ad.get(i).getSchool().toUpperCase());
         }
+        ArrayList<String> schoolList = new ArrayList<String>(new HashSet<String>(schools));
+        ArrayList<String> dateList = new ArrayList<String>(new HashSet<String>(dates));
 
-        ArrayList<String> newList = new ArrayList<String>(new HashSet<String>(schools));
         s1 = (Spinner) findViewById(R.id.schoolSpinner);
         s2 = (Spinner) findViewById(R.id.dateSpinner);
-        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(context,
-                R.layout.spinner, newList);
-        spinnerAdapter.setDropDownViewResource(R.layout.spinner);
-        s1.setAdapter(spinnerAdapter);
-        s2.setEnabled(false);
 
+        ArrayAdapter<String> schoolSpinAdapter = new ArrayAdapter<String>(this,
+                R.layout.spinner, schoolList);
+        schoolSpinAdapter.setDropDownViewResource(R.layout.spinner);
+        s1.setAdapter(schoolSpinAdapter);
 
+        ArrayAdapter<String> dateSpinAdapter = new ArrayAdapter<String>(this,
+                R.layout.spinner, dateList);
+        dateSpinAdapter.setDropDownViewResource(R.layout.spinner);
+        s2.setAdapter(dateSpinAdapter);
 
-        s1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        button = (Button) findViewById(R.id.button);
 
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> arg0, View arg1,
-                                       int arg2, long arg3) {
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ActivityList.class);
 
-                String str = s1.getSelectedItem().toString();
-                for (int i = 0; i < schools.size(); i++) {
-                    if (str == ad.get(i).getSchool()) {
-                        dates.add(ad.get(i).getDay());
-                    }
-                }
-                ArrayList<Integer> newList = new ArrayList<Integer>(new HashSet<Integer>(dates));
-                ArrayAdapter<Integer> spinnerAdapter = new ArrayAdapter<Integer>(context,
-                        R.layout.spinner, newList);
-                spinnerAdapter.setDropDownViewResource(R.layout.spinner);
-                s2.setAdapter(spinnerAdapter);
-                s2.setEnabled(true);
 
+                String school = s1.getSelectedItem().toString();
+                String date = s2.getSelectedItem().toString();
+
+                intent.putExtra("school", school);
+                intent.putExtra("date", date);
+                startActivity(intent);
             }
+        });
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });}
+        }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
