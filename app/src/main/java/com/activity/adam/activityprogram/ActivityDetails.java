@@ -1,12 +1,17 @@
 package com.activity.adam.activityprogram;
 
+import android.content.ActivityNotFoundException;
+import android.content.ComponentName;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,7 +24,7 @@ import java.util.Random;
 public class ActivityDetails extends AppCompatActivity {
 
     TextView descriptionnn, descriptionn, locationn, roomm, hourr;
-
+    FloatingActionButton calendar,notification,appActivity;
 
 
     @Override
@@ -52,14 +57,14 @@ public class ActivityDetails extends AppCompatActivity {
         hourr = (TextView) findViewById(R.id.hourr);
         hourr.setText(hour + ":00");
 
-        FloatingActionButton calendar = (FloatingActionButton) findViewById(R.id.calendar);
+        calendar = (FloatingActionButton) findViewById(R.id.calendar);
         calendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Calendar beginTime = Calendar.getInstance();
                 beginTime.set(year, month, day, hour, 0);
                 Calendar endTime = Calendar.getInstance();
-                endTime.set(year, month, day, hour+1, 0);
+                endTime.set(year, month, day, hour + 1, 0);
                 Intent intent = new Intent(Intent.ACTION_INSERT)
                         .setData(CalendarContract.Events.CONTENT_URI)
                         .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginTime.getTimeInMillis())
@@ -71,15 +76,42 @@ public class ActivityDetails extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        appActivity = (FloatingActionButton) findViewById(R.id.map);
+        appActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-        FloatingActionButton notification = (FloatingActionButton) findViewById(R.id.notification);
-        notification.setOnClickListener(new View.OnClickListener(){
+                Intent intent = new Intent();
+                int position = 13;
+                for (int i = 0; i < MainActivity.md.size(); i++) {
+                    if (MainActivity.md.get(i).getAbbr().equals(school)) {
+                        System.out.println("POSITION MATCHES  "+ i);
+                        position = i;
+                    }
+                }
+                intent.setComponent(new ComponentName("com.activity.adam.locationfinder", "com.activity.adam.locationfinder.BuildingDetails"));
+
+
+            //pass position to next class to get the right MapData
+            intent.putExtra("position", position);
+
+                    startActivity(intent);
+
+            }
+        });
+
+        notification = (FloatingActionButton) findViewById(R.id.notification);
+        notification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.app.getNotification().createNotification(new Random().nextInt(100000000),description,location + room);
+                Calendar beginTime = Calendar.getInstance();
+                beginTime.set(year, month, day, hour, 0);
+                MainActivity.app.getNotification().remind((int) (beginTime.getTimeInMillis() - Calendar.getInstance().getTimeInMillis()), description, location + room);
                 Toast.makeText(ActivityDetails.this, "Notification Set", Toast.LENGTH_SHORT).show();
             }
         });
     }
+
+
 
 }

@@ -18,12 +18,14 @@ import java.util.HashSet;
 import framework.implementation.ActivityData;
 import framework.implementation.AndroidApp;
 import framework.implementation.Database;
+import framework.implementation.MapData;
 
 public class MainActivity extends AppCompatActivity {
 
     static AndroidApp app;
     static Database db;
     ArrayList<ActivityData> ad;
+    static ArrayList<MapData> md;
     ArrayList<String> schools = new ArrayList<>();
     ArrayList<String> dates = new ArrayList<>();
 
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         app = new AndroidApp(this);
         db = new Database(getAssets(), "uea-map-data.tsv", "activityprogramlist.tsv");
+        md = db.getData();
         ad = db.getActivityData();
 
         for (int i = 0; i < ad.size(); i++) {
