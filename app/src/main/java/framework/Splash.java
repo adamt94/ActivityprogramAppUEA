@@ -5,16 +5,11 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.Gravity;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.activity.adam.activityprogram.MainActivity;
-import com.activity.adam.activityprogram.R;
-
-import java.lang.Override;import java.lang.Runnable;
 
 /**
  * Default Splash Screen Activity

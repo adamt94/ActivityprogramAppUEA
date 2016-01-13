@@ -10,9 +10,11 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.widget.Toast;
+
 import framework.GPS;
 /**
  * Created by BEN on 17/12/2015.
+ *
  */
 public class AndroidGPS implements GPS {
     private boolean GPS = false;

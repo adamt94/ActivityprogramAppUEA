@@ -2,7 +2,7 @@ package framework;
 
 /**
  * Created by BEN on 17/12/2015.
- *  use alarm manager TODO!
+ * Interface for setting/updating/canceling notifications
  */
 public interface Notification {
 

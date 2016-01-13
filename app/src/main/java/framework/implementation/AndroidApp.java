@@ -14,21 +14,7 @@ import framework.Notification;
 
 /**
  * Created by BEN on 17/12/2015.
- */
-import android.app.Activity;
-import android.graphics.Bitmap;
-import android.os.PowerManager;
-
-import framework.App;
-import framework.Audio;
-import framework.FileIO;
-import framework.GPS;
-import framework.Graphics;
-import framework.Input;
-import framework.Notification;
-
-/**
- * Created by BEN on 17/12/2015.
+ * The main app handler
  */
 public class AndroidApp implements App{
     private Activity activity;
@@ -45,7 +31,7 @@ public class AndroidApp implements App{
         this.activity = activity;
         graphics = new AndroidGraphics(activity.getAssets(), Bitmap.createBitmap(480,800, Bitmap.Config.RGB_565));
         audio = new AndroidAudio(activity);
-        input = new AndroidInput(activity,activity.getCurrentFocus(),480/ activity.getWindowManager().getDefaultDisplay().getWidth(),800/ activity.getWindowManager().getDefaultDisplay().getWidth());
+        //input = new AndroidInput(activity.getApplicationContext(),activity.onCreatePanelView(0),480,800);
         fileIO = new AndroidFileIO(activity);
         notification = new AndroidNotification(activity);
         gps = new AndroidGPS(activity);

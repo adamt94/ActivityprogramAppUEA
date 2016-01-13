@@ -2,6 +2,7 @@ package framework;
 
 /**
  * Created by Callum on 06/11/2015.
+ * Copyright for the framework
  */
 public abstract class FrameworkCopyright {
 

@@ -2,6 +2,7 @@ package framework.implementation;
 
 /**
  * Created by adam on 29-Dec-15.
+ * Used in database to store locaiton instances with more information
  */
 public class MapData {
     private String type;

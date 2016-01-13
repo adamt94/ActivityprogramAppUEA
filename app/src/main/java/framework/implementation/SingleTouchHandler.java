@@ -1,15 +1,19 @@
 package framework.implementation;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.view.MotionEvent;
 import android.view.View;
 
-import framework.Pool;
+import java.util.ArrayList;
+import java.util.List;
+
 import framework.Input.TouchEvent;
+import framework.Pool;
 import framework.Pool.PoolObjectFactory;
 
+/**
+ * This class implements the TouchHandler interface and handles all single touch events within the
+ * application
+ */
 public class SingleTouchHandler implements TouchHandler {
     boolean isTouched;
     int touchX;
@@ -19,7 +23,18 @@ public class SingleTouchHandler implements TouchHandler {
     List<TouchEvent> touchEventsBuffer = new ArrayList<TouchEvent>();
     float scaleX;
     float scaleY;
-    
+
+    /**
+     * Constructor - for the SingleTouchHandler object
+     * <p>
+     * Uses the PoolObjectFactory class as a template to create and maintain a large number of
+     * TouchEvent instances in a manageable way, by creating TouchEvent objects and passing them
+     * into a Pool.
+     * </p>
+     * @param view the view to be monitored
+     * @param scaleX x size
+     * @param scaleY y size
+     */
     public SingleTouchHandler(View view, float scaleX, float scaleY) {
         PoolObjectFactory<TouchEvent> factory = new PoolObjectFactory<TouchEvent>() {
             @Override

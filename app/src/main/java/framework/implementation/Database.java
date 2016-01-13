@@ -12,6 +12,7 @@ import java.util.logging.Logger;
 
 /**
  * Created by BEN on 17/12/2015.
+ * Used to fetch database information such as locations and events
  */
 public class Database {
     //contains all the data of uea locations,buildings etc

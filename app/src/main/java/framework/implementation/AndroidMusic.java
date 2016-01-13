@@ -1,7 +1,5 @@
 package framework.implementation;
 
-import java.io.IOException;
-
 import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
@@ -9,44 +7,38 @@ import android.media.MediaPlayer.OnPreparedListener;
 import android.media.MediaPlayer.OnSeekCompleteListener;
 import android.media.MediaPlayer.OnVideoSizeChangedListener;
 
+import java.io.IOException;
+
 import framework.Music;
 
+/**
+ * This class implements the Music interface and handles all of the Music within the application
+ */
 public class AndroidMusic implements Music, OnCompletionListener, OnSeekCompleteListener, OnPreparedListener, OnVideoSizeChangedListener {
     MediaPlayer mediaPlayer;
     boolean isPrepared = false;
 
-    private static AndroidMusic instance;
-
-    private AndroidMusic(AssetFileDescriptor assetDescriptor) {
-        load(assetDescriptor);
-    }
-
-    private void load(AssetFileDescriptor assetDescriptor){
+    /**
+     * Constructor - for the AndroidMusic object.
+     * Creates a MediaPlayer object and flags that it is prepared to handle music
+     * @param assetDescriptor
+     */
+    public AndroidMusic(AssetFileDescriptor assetDescriptor) {
         mediaPlayer = new MediaPlayer();
-        try{
+        try {
             mediaPlayer.setDataSource(assetDescriptor.getFileDescriptor(),
-            assetDescriptor.getStartOffset(),
-            assetDescriptor.getLength());
+                    assetDescriptor.getStartOffset(),
+                    assetDescriptor.getLength());
             mediaPlayer.prepare();
             isPrepared = true;
             mediaPlayer.setOnCompletionListener(this);
             mediaPlayer.setOnSeekCompleteListener(this);
             mediaPlayer.setOnPreparedListener(this);
             mediaPlayer.setOnVideoSizeChangedListener(this);
-        } catch (Exception e){
+            
+        } catch (Exception e) {
             throw new RuntimeException("Couldn't load music");
         }
-
-    }
-
-    public static AndroidMusic getInstance(AssetFileDescriptor assetDescriptor) {
-        if (instance == null) {
-            instance = new AndroidMusic(assetDescriptor);
-        } else {
-            instance.stop();
-            instance.load(assetDescriptor);
-        }
-            return instance;
     }
 
     @Override

@@ -1,8 +1,5 @@
 package framework.implementation;
 
-import java.io.IOException;
-import java.io.InputStream;
-
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
@@ -13,9 +10,15 @@ import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.graphics.Rect;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 import framework.Graphics;
 import framework.Image;
 
+/**
+ * This class implements the Graphics interface and handles all display methods for the application
+ */
 public class AndroidGraphics implements Graphics {
     AssetManager assets;
     Bitmap frameBuffer;
@@ -24,6 +27,11 @@ public class AndroidGraphics implements Graphics {
     Rect srcRect = new Rect();
     Rect dstRect = new Rect();
 
+    /**
+     * Constructor - for the AndroidGraphics object
+     * @param assets set of Assets to be used / displayed
+     * @param frameBuffer data from the framebuffer
+     */
     public AndroidGraphics(AssetManager assets, Bitmap frameBuffer) {
         this.assets = assets;
         this.frameBuffer = frameBuffer;
@@ -107,8 +115,18 @@ public class AndroidGraphics implements Graphics {
 
         
     }
-    
 
+
+    /**
+     * Draw Method - for drawing an image in a new position on the screen
+     * @param Image Image to be draw
+     * @param x X position to be drawn at
+     * @param y Y position to be drawn at
+     * @param srcX original image X pos to take from
+     * @param srcY original image Y pos to take from
+     * @param srcWidth original image width
+     * @param srcHeight original image height
+     */
     public void drawImage(Image Image, int x, int y, int srcX, int srcY,
             int srcWidth, int srcHeight) {
         srcRect.left = srcX;
@@ -130,7 +148,19 @@ public class AndroidGraphics implements Graphics {
     public void drawImage(Image Image, int x, int y) {
         canvas.drawBitmap(((AndroidImage)Image).bitmap, x, y, null);
     }
-    
+
+    /**
+     * Draw Method - for drawing a rescaled image
+     * @param Image Image to be draw
+     * @param x X position to be drawn at
+     * @param y Y position to be drawn at
+     * @param width original image width
+     * @param height original image height
+     * @param srcX original image X pos to take from
+     * @param srcY original image Y pos to take from
+     * @param srcWidth original image width
+     * @param srcHeight original image height
+     */
     public void drawScaledImage(Image Image, int x, int y, int width, int height, int srcX, int srcY, int srcWidth, int srcHeight){
         
         

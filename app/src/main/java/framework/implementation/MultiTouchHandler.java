@@ -1,15 +1,20 @@
 package framework.implementation;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.view.MotionEvent;
 import android.view.View;
 
-import framework.Pool;
+import java.util.ArrayList;
+import java.util.List;
+
 import framework.Input.TouchEvent;
+import framework.Pool;
 import framework.Pool.PoolObjectFactory;
 
+
+/**
+ * This class implements the TouchHandler interface and handles all multiple touch events within the
+ * application
+ */
 public class MultiTouchHandler implements TouchHandler {
     private static final int MAX_TOUCHPOINTS = 10;
     
@@ -23,6 +28,17 @@ public class MultiTouchHandler implements TouchHandler {
     float scaleX;
     float scaleY;
 
+    /**
+     * Constructor - for the MultiTouchHandler object
+     * <p>
+     * Uses the PoolObjectFactory class as a template to create and maintain a large number of
+     * TouchEvent instances in a manageable way, by creating TouchEvent objects and passing them
+     * into a Pool.
+     * </p>
+     * @param view the view to be monitored
+     * @param scaleX x size
+     * @param scaleY y size
+     */
     public MultiTouchHandler(View view, float scaleX, float scaleY) {
         PoolObjectFactory<TouchEvent> factory = new PoolObjectFactory<TouchEvent>() {
             @Override
@@ -143,8 +159,12 @@ public class MultiTouchHandler implements TouchHandler {
             return touchEvents;
         }
     }
-    
-    // returns the index for a given pointerId or -1 if no index.
+
+    /**
+     * Returns the index for a given pointerId or -1 if no index.
+     * @param pointerId
+     * @return
+     */
     private int getIndex(int pointerId) {
         for (int i = 0; i < MAX_TOUCHPOINTS; i++) {
             if (id[i] == pointerId) {

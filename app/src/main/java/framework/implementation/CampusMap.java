@@ -2,7 +2,6 @@ package framework.implementation;
 
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.TileOverlay;
 import com.google.android.gms.maps.model.TileProvider;
 import com.google.android.gms.maps.model.UrlTileProvider;
 
@@ -11,6 +10,7 @@ import java.net.URL;
 
 /**
  * Created by adam on 09-Jan-16.
+ * Methods to load UEA campus map
  */
 public class CampusMap {
 

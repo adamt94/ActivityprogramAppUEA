@@ -2,6 +2,7 @@ package framework.implementation;
 
 /**
  * Created by callum on 12-Jan-16.
+ * Used in database to store activity instances with more information
  */
 
 public class ActivityData {

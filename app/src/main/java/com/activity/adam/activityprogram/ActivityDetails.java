@@ -94,9 +94,14 @@ public class ActivityDetails extends AppCompatActivity {
 
             //pass position to next class to get the right MapData
             intent.putExtra("position", position);
-
+            try
+            {
                     startActivity(intent);
 
+            }catch(Exception e)
+            {
+                finish();
+            }
             }
         });
 

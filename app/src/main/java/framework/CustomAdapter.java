@@ -4,13 +4,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import framework.implementation.MapData;
-
 /**
  * Created by adam on 07-Nov-15.
+ * Allows a more flexible list-view
  */
 public interface CustomAdapter {
 
