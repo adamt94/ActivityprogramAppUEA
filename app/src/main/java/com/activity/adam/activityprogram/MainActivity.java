@@ -2,6 +2,7 @@ package com.activity.adam.activityprogram;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -15,10 +16,12 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 import framework.implementation.ActivityData;
+import framework.implementation.AndroidApp;
 import framework.implementation.Database;
 
 public class MainActivity extends AppCompatActivity {
 
+    static AndroidApp app;
     static Database db;
     ArrayList<ActivityData> ad;
     ArrayList<String> schools = new ArrayList<>();
@@ -34,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        app = new AndroidApp(this);
         db = new Database(getAssets(), "uea-map-data.tsv", "activityprogramlist.tsv");
         ad = db.getActivityData();
 

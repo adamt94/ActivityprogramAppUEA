@@ -13,4 +13,6 @@ public interface Notification {
     public void cancelNotificaiton(int id);
 
     public void cancelAll();
+
+    public void remind(int time, String title, String message);
 }

@@ -1,15 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.activity.adam.activityprogram.ActivityDetails"
-    tools:showIn="@layout/activity_activity_details">
+    tools:showIn="@layout/activity_activity_details" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.activity.adam.activityprogram.ActivityDetails">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:maxLines = "6"
+            android:scrollbars = "vertical"
+            android:padding="10dp"
+            android:id="@+id/descriptionn"
+            />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_below="@id/descriptionn"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/descriptionnn"
+            android:text="descriptionnn"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/descriptionn"
+            android:layout_alignParentRight="true"
+            android:text="Time"
+            android:id="@+id/hourr"
+            />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_margin="10dp"
+            android:id="@+id/line"
+            android:layout_height="3dp"
+            android:layout_below="@id/descriptionnn"
+            android:background="@color/colorAccent"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="Location"
+            android:id="@+id/locationn"
+            android:layout_below="@id/line"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line"
+            android:gravity="right"
+            android:layout_alignParentRight="true"
+            android:text="Room"
+            android:id="@+id/roomm"
+           />
+
+
+    </RelativeLayout>
+
+</android.support.v4.widget.NestedScrollView>

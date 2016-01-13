@@ -14,7 +14,6 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import framework.implementation.ActivityData;
-import framework.implementation.Database;
 
 public class ActivityList extends AppCompatActivity {
 
@@ -51,7 +50,29 @@ public class ActivityList extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Intent intent = new Intent(ActivityList.this, ActivityDetails.class);
-                //
+                String description = "", location = "", room = "";
+                int day = 0, month = 0, year = 0, hour = 0;
+                for (int i = 0; i < ad.size(); i++) {
+                    if ((ad.get(i).getSchool().toUpperCase().equals(school)) && ad.get(i).getDate().equals(date)){
+                        day = ad.get(i).getDay();
+                        month = ad.get(i).getMonth();
+                        year = ad.get(i).getYear();
+                        hour = ad.get(i).getHour();
+                        description = ad.get(i).getDescription();
+                        location = ad.get(i).getLocation();
+                        room = ad.get(i).getRoom();
+                    }
+                }
+                intent.putExtra("school", school);
+                intent.putExtra("date", date);
+                intent.putExtra("day", day);
+                intent.putExtra("month", month);
+                intent.putExtra("year", year);
+                intent.putExtra("hour", hour);
+                intent.putExtra("description", description);
+                intent.putExtra("location", location);
+                intent.putExtra("room", room);
+
                 startActivity(intent);
 
 

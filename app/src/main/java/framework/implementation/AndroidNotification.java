@@ -10,7 +10,6 @@ import android.content.res.AssetManager;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationCompat.Builder;
 
-
 import framework.Image;
 import framework.Notification;
 
@@ -61,30 +60,29 @@ public class AndroidNotification implements Notification {
         manager.cancelAll();
     }
 
-//    public void Remind (int time, String title, String message)
-//    {
-//        Intent alarmIntent = new Intent(context,AlarmReceiver);
-//        alarmIntent.putExtra("message", message);
-//        alarmIntent.putExtra("title", title);
-//        AlarmManager alarmManager = (AlarmManager) context.getSystemService(context.ALARM_SERVICE);
-//        alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, "time", PendingIntent.getBroadcast(context,alarmIntent, PendingIntentFlags.UpdateCurrent));
-//
-//    }
-//
-//    public class AlarmReceiver extends BroadcastReceiver
-//    {
-//        @Override
-//        public void onReceive(Context context, Intent intent) {
-//            String message = intent.getStringExtra("message");
-//            String title = intent.getStringExtra("title");
-//            builder = new Builder(context);
-//            builder.setSmallIcon(android.support.v7.appcompat.R.drawable.notification_template_icon_bg);
-//            builder.setContentTitle(title);
-//            builder.setContentText(message);
-//            builder.setAutoCancel(true);
-//            builder.setCategory(NotificationCompat.CATEGORY_EVENT);
-//            Intent rIntent = new Intent();
-//            manager.notify(0,builder.build());
-//        }
-//    }
+    @Override
+    public void remind (int time, String title, String message)
+    {
+        Intent alarmIntent = new Intent(context,AlarmReceiver.class);
+        alarmIntent.putExtra("message", message);
+        alarmIntent.putExtra("title", title);
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(context.ALARM_SERVICE);
+        alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, time, PendingIntent.getBroadcast(context,0,alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT));
+    }
+
+    public class AlarmReceiver extends BroadcastReceiver
+    {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String message = intent.getStringExtra("message");
+            String title = intent.getStringExtra("title");
+            builder = new Builder(context);
+            builder.setSmallIcon(android.support.v7.appcompat.R.drawable.notification_template_icon_bg);
+            builder.setContentTitle(title);
+            builder.setContentText(message);
+            builder.setAutoCancel(true);
+            builder.setCategory(NotificationCompat.CATEGORY_EVENT);
+            manager.notify(0,builder.build());
+        }
+    }
 }
