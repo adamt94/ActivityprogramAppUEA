@@ -45,7 +45,7 @@ public class AndroidApp implements App{
         this.activity = activity;
         graphics = new AndroidGraphics(activity.getAssets(), Bitmap.createBitmap(480,800, Bitmap.Config.RGB_565));
         audio = new AndroidAudio(activity);
-//        input = new AndroidInput(activity,activity.getCurrentFocus(),480/ activity.getWindowManager().getDefaultDisplay().getWidth(),800/ activity.getWindowManager().getDefaultDisplay().getWidth());
+        input = new AndroidInput(activity,activity.getCurrentFocus(),480/ activity.getWindowManager().getDefaultDisplay().getWidth(),800/ activity.getWindowManager().getDefaultDisplay().getWidth());
         fileIO = new AndroidFileIO(activity);
         notification = new AndroidNotification(activity);
         gps = new AndroidGPS(activity);

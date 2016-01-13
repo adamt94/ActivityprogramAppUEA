@@ -16,6 +16,10 @@ import com.activity.adam.activityprogram.R;
 
 import java.lang.Override;import java.lang.Runnable;
 
+/**
+ * Default Splash Screen Activity
+ * Shows UEA Logo and Name
+ */
 public class Splash extends Activity {
 
     ImageView UEALogo;
