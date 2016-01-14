@@ -104,7 +104,7 @@ public class Database {
 
     }
 
-    public static ArrayList<ActivityData> getActivityData() {
+    public ArrayList<ActivityData> getActivityData() {
         return activityData;
     }
 

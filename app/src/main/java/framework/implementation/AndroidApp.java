@@ -35,7 +35,7 @@ public class AndroidApp implements App{
         fileIO = new AndroidFileIO(activity);
         notification = new AndroidNotification(activity);
         gps = new AndroidGPS(activity);
-        database = new Database(activity.getAssets(),"", "");
+        database = new Database(activity.getAssets(),"uea-map-data.tsv", "activityprogramlist.tsv");
         PowerManager powerManager = (PowerManager) activity.getSystemService(activity.getApplicationContext().POWER_SERVICE);
         wakeLock = powerManager.newWakeLock(PowerManager.FULL_WAKE_LOCK, "MyGame");
     }

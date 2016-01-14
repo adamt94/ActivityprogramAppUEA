@@ -26,7 +26,7 @@ public class ActivityList extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        ad = MainActivity.db.getActivityData();
+        ad = MainActivity.app.getDatabase().getActivityData();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
